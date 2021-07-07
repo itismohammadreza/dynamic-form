@@ -1,0 +1,9 @@
+:host ::ng-deep {
+  p-inputNumber,
+  .p-inputnumber,
+  .p-inputtext,
+  small {
+    display: block;
+    width: 100%;
+  }
+}

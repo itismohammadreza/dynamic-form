@@ -1,0 +1,29 @@
+<div class="container p-4">
+  <div class="text-center">
+    <ng-button label="Add Form Item" color="success" (click)="onAddClick()"></ng-button>
+  </div>
+    <h2>Preview</h2>
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="form">
+          <ng-dynamic-form [form]="form" [config]="config"></ng-dynamic-form>
+          <ng-button class="d-block mt-5" label="Show Form Result As JSON"
+                     (click)="showFormResult()">
+          </ng-button>
+        </form>
+      </div>
+    </div>
+  <hr>
+  <ng-container *ngIf="result">
+    <h2>JSON</h2>
+    <div class="row">
+      <div class="col-12">
+        {{result | json}}
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<p-dialog header="Add Form Item" [style]="{width: '30vw'}" [(visible)]="showDialog" [modal]="true">
+  <ng-form-item (onSubmit)="onSubmitDialog($event)"></ng-form-item>
+</p-dialog>

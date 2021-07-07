@@ -1,0 +1,10 @@
+<div [formGroup]="form">
+  <label>{{ config.label }}</label>
+  <input
+    pInputText
+    [formControlName]="config.name"
+    [attr.placeholder]="config.placeholder"
+  />
+  <small *ngIf="form.get(config.name).hasError('required')" class="p-error">Is Required</small>
+  <small *ngIf="config.hint">{{ config.hint }}</small>
+</div>

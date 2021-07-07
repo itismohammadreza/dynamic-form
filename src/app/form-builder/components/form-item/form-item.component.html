@@ -1,0 +1,9 @@
+<form class="form-row" [formGroup]="form" (ngSubmit)="submit()">
+  <p-dropdown placeholder="Type" formControlName="type" [options]="dropDownOptions"></p-dropdown>
+  <input pInputText formControlName="name" placeholder="Name">
+  <input pInputText formControlName="label" placeholder="Label">
+  <input pInputText formControlName="placeholder" placeholder="Placeholder">
+  <input pInputText formControlName="hint" placeholder="Hint">
+  <p-checkbox [formControl]="form.get('required')" label="Required"></p-checkbox>
+  <ng-button [disabled]="form.invalid" type="submit" label="Submit"></ng-button>
+</form>

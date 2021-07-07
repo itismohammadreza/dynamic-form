@@ -1,0 +1,10 @@
+:host ::ng-deep {
+  p-dropdown, .p-dropdown, input {
+    width: 100%;
+  }
+
+  form > *:not(:last-child) {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+}
